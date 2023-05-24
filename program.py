@@ -30,7 +30,8 @@ def process_files():
 
     df = df.dropna(axis=1, thresh=df.shape[0] - 100)
 
-    excel_file = "../1_test/output.xlsx"
+    current_directory = os.getcwd()
+    excel_file = os.path.join(current_directory, "output.xlsx")
     df.to_excel(excel_file, index=False)
     tk.messagebox.showinfo("Ready", f"Table has been saved to {excel_file}!")
 
